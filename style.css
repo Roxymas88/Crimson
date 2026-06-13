@@ -1,0 +1,666 @@
+/* ============================================
+   LUMÉN — Design Tokens
+   ============================================ */
+:root {
+  --ink:        #0b0b0d;   /* near-black background */
+  --surface:    #16151a;   /* card / panel surface */
+  --surface-2:  #1f1e24;   /* elevated surface */
+  --ivory:      #f6f2ea;   /* primary text on dark */
+  --gold:       #cda86b;   /* signature accent */
+  --gold-soft:  #e8d3ab;   /* lighter gold for hover */
+  --bronze:     #4a3a2c;   /* secondary warm tone */
+  --mute:       #8c8780;   /* muted gray text */
+  --line:       rgba(246, 242, 234, 0.08);
+
+  --display: 'Fraunces', serif;
+  --body: 'Outfit', sans-serif;
+
+  --container: 1240px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--body);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+/* ============================================
+   Utility
+   ============================================ */
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--body);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 16px 32px;
+  border: 1px solid var(--gold);
+  color: var(--ivory);
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+  letter-spacing: 0.24em;
+}
+
+.btn.filled {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn.filled:hover {
+  background: var(--gold-soft);
+}
+
+/* ============================================
+   Header / Nav
+   ============================================ */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 28px 0;
+  mix-blend-mode: difference;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ivory);
+}
+.logo span { color: var(--gold); font-style: italic; }
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--ivory);
+  transition: width 0.35s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-cart {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================
+   Hero / Constellation Canvas
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+#constellation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 60px;
+}
+
+.hero .eyebrow {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 11vw, 8.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+}
+
+.hero p.lede {
+  max-width: 480px;
+  margin: 32px auto 44px;
+  color: var(--mute);
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.scroll-cue .line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(0.6); opacity: 0.4; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* ============================================
+   Section Headers
+   ============================================ */
+.section {
+  padding: 140px 0;
+}
+
+.section.tight { padding: 100px 0; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  max-width: 640px;
+}
+
+.section-head h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-head .desc {
+  max-width: 340px;
+  color: var(--mute);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   Product Grid
+   ============================================ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.product-card {
+  position: relative;
+  background: var(--ink);
+  padding: 0;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.product-visual canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.product-card:hover .product-visual canvas {
+  opacity: 1;
+}
+
+.product-shape {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(.16,1,.3,1);
+}
+
+.product-card:hover .product-shape {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.product-meta {
+  padding: 24px 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+}
+
+.product-meta .name {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.product-meta .cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.product-meta .price {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* SVG product shapes (rings, pendants etc) */
+.shape-ring { fill: none; stroke: var(--gold); stroke-width: 3; }
+.shape-ring.stone { fill: var(--gold); stroke: var(--gold); }
+.shape-line { stroke: var(--gold); stroke-width: 2; fill: none; }
+.shape-fill { fill: var(--gold); }
+.shape-outline { fill: none; stroke: var(--ivory); stroke-width: 1.2; opacity: 0.5; }
+
+/* ============================================
+   Marquee / Strip
+   ============================================ */
+.strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.strip-track {
+  display: inline-flex;
+  gap: 64px;
+  animation: marquee 28s linear infinite;
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--mute);
+}
+
+.strip-track span { color: var(--gold); margin: 0 24px; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 80px 0 36px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+
+.footer-top h3 {
+  font-family: var(--display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  max-width: 320px;
+  margin-bottom: 28px;
+}
+
+.footer-col h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 20px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: var(--ivory);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, padding-left 0.3s ease;
+}
+.footer-col a:hover { opacity: 1; padding-left: 6px; color: var(--gold); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--mute);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ============================================
+   Page Header (non-home pages)
+   ============================================ */
+.page-hero {
+  padding: 200px 0 100px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.page-hero h1 {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+
+.page-hero .desc {
+  max-width: 460px;
+  color: var(--mute);
+  margin-top: 24px;
+  font-size: 1rem;
+}
+
+/* ============================================
+   Filters (Shop)
+   ============================================ */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 10px 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  font-family: var(--body);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ============================================
+   About page
+   ============================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.about-visual {
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.about-text h2 {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 400;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+
+.about-text h2 em { font-style: italic; color: var(--gold); }
+
+.about-text p {
+  color: var(--mute);
+  margin-bottom: 20px;
+  max-width: 460px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.value-card {
+  background: var(--ink);
+  padding: 48px 36px;
+}
+
+.value-card .num {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.value-card h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.value-card p {
+  color: var(--mute);
+  font-size: 0.92rem;
+}
+
+/* ============================================
+   Contact page
+   ============================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.contact-info .item {
+  margin-bottom: 44px;
+}
+
+.contact-info .item h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.contact-info .item p,
+.contact-info .item a {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.form-field {
+  margin-bottom: 28px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 12px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  color: var(--ivory);
+  font-family: var(--body);
+  font-size: 1.05rem;
+  font-weight: 300;
+  padding: 12px 0;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--mute);
+  opacity: 0.5;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 980px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 56px 32px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+
+@media (max-width: 640px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .section { padding: 90px 0; }
+  .section-head { margin-bottom: 56px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .strip-track, .scroll-cue .line { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}

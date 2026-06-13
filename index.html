@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMÉN — Wearable Light</title>
+<meta name="description" content="LUMÉN — aksesoris minimalis yang menangkap cahaya. Cincin, kalung, anting, dan gelang dengan desain abadi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">LUM<span>É</span>N</a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="shop.html" class="nav-cart">Shop now →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <canvas id="constellation" aria-hidden="true"></canvas>
+  <div class="hero-content wrap">
+    <span class="eyebrow">Aksesoris &amp; Perhiasan — Edisi Terbatas</span>
+    <h1>Wearable<br><em>Light</em></h1>
+    <p class="lede">Setiap kepingan LUMÉN dibentuk untuk menangkap cahaya dan membawanya bersamamu — desain minimalis, detail yang bertahan lama.</p>
+    <a href="shop.html" class="btn filled">Lihat Koleksi</a>
+  </div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE STRIP ============ -->
+<div class="strip">
+  <div class="strip-track" aria-hidden="true">
+    <span>Free shipping se-Indonesia</span> Handcrafted finish
+    <span>✦</span> Tahan air &amp; anti-tarnish
+    <span>✦</span> Dikirim dari Pinterest favoritmu
+    <span>✦</span> Free shipping se-Indonesia
+    <span>✦</span> Handcrafted finish
+    <span>✦</span> Tahan air &amp; anti-tarnish
+    <span>✦</span> Dikirim dari Pinterest favoritmu
+    <span>✦</span>
+  </div>
+</div>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Koleksi yang <em>paling dicari</em> minggu ini</h2>
+      <p class="desc">Dipilih dari yang paling banyak disimpan ke board Pinterest — sekarang siap dipesan.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Product 1: Ring -->
+      <a href="shop.html" class="product-card">
+        <div class="product-visual">
+          <canvas class="mini-field"></canvas>
+          <svg class="product-shape" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle class="shape-ring" cx="60" cy="68" r="34"/>
+            <path class="shape-line" d="M44 38 L60 14 L76 38" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle class="shape-ring stone" cx="60" cy="22" r="6"/>
+          </svg>
+        </div>
+        <div class="product-meta">
+          <div>
+            <div class="name">Cincin Solstice</div>
+            <div class="cat">Gold Vermeil · Ring</div>
+          </div>
+          <div class="price">Rp 185rb</div>
+        </div>
+      </a>
+
+      <!-- Product 2: Pendant Necklace -->
+      <a href="shop.html" class="product-card">
+        <div class="product-visual">
+          <canvas class="mini-field"></canvas>
+          <svg class="product-shape" width="110" height="150" viewBox="0 0 110 150" fill="none">
+            <path class="shape-line" d="M20 14 Q55 50 90 14"/>
+            <circle class="shape-outline" cx="55" cy="92" r="34"/>
+            <path class="shape-fill" d="M55 64 L75 92 L55 124 L35 92 Z"/>
+          </svg>
+        </div>
+        <div class="product-meta">
+          <div>
+            <div class="name">Kalung Aurora</div>
+            <div class="cat">Stainless 18K · Necklace</div>
+          </div>
+          <div class="price">Rp 220rb</div>
+        </div>
+      </a>
+
+      <!-- Product 3: Hoop Earrings -->
+      <a href="shop.html" class="product-card">
+        <div class="product-visual">
+          <canvas class="mini-field"></canvas>
+          <svg class="product-shape" width="120" height="140" viewBox="0 0 120 140" fill="none">
+            <circle class="shape-ring" cx="42" cy="55" r="26"/>
+            <circle class="shape-ring" cx="78" cy="80" r="34"/>
+            <circle class="shape-fill" cx="42" cy="29" r="3"/>
+            <circle class="shape-fill" cx="78" cy="46" r="3"/>
+          </svg>
+        </div>
+        <div class="product-meta">
+          <div>
+            <div class="name">Anting Halo Duo</div>
+            <div class="cat">Gold Plated · Earrings</div>
+          </div>
+          <div class="price">Rp 160rb</div>
+        </div>
+      </a>
+
+      <!-- Product 4: Chain Bracelet -->
+      <a href="shop.html" class="product-card">
+        <div class="product-visual">
+          <canvas class="mini-field"></canvas>
+          <svg class="product-shape" width="150" height="100" viewBox="0 0 150 100" fill="none">
+            <circle class="shape-ring" cx="35" cy="50" r="16"/>
+            <circle class="shape-ring" cx="65" cy="50" r="16"/>
+            <circle class="shape-ring" cx="95" cy="50" r="16"/>
+            <circle class="shape-ring" cx="125" cy="50" r="16"/>
+          </svg>
+        </div>
+        <div class="product-meta">
+          <div>
+            <div class="name">Gelang Link Lumiere</div>
+            <div class="cat">Stainless 18K · Bracelet</div>
+          </div>
+          <div class="price">Rp 145rb</div>
+        </div>
+      </a>
+
+      <!-- Product 5: Bar Pendant -->
+      <a href="shop.html" class="product-card">
+        <div class="product-visual">
+          <canvas class="mini-field"></canvas>
+          <svg class="product-shape" width="110" height="150" viewBox="0 0 110 150" fill="none">
+            <path class="shape-line" d="M20 14 Q55 50 90 14"/>
+            <rect class="shape-fill" x="40" y="70" width="30" height="56" rx="4" transform="rotate(8 55 98)"/>
+          </svg>
+        </div>
+        <div class="product-meta">
+          <div>
+            <div class="name">Kalung Bar Minimal</div>
+            <div class="cat">Gold Vermeil · Necklace</div>
+          </div>
+          <div class="price">Rp 175rb</div>
+        </div>
+      </a>
+
+      <!-- Product 6: Stacking Rings -->
+      <a href="shop.html" class="product-card">
+        <div class="product-visual">
+          <canvas class="mini-field"></canvas>
+          <svg class="product-shape" width="120" height="120" viewBox="0 0 120 120" fill="none">
+            <circle class="shape-ring" cx="60" cy="60" r="36"/>
+            <circle class="shape-outline" cx="60" cy="60" r="26"/>
+            <circle class="shape-outline" cx="60" cy="60" r="16"/>
+          </svg>
+        </div>
+        <div class="product-meta">
+          <div>
+            <div class="name">Set Cincin Stack</div>
+            <div class="cat">Mixed Finish · Ring Set</div>
+          </div>
+          <div class="price">Rp 210rb</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT TEASER ============ -->
+<section class="section tight" style="border-top:1px solid var(--line);">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <svg width="60%" viewBox="0 0 200 200" fill="none">
+        <circle class="shape-ring" cx="100" cy="100" r="70"/>
+        <circle class="shape-outline" cx="100" cy="100" r="92"/>
+        <path class="shape-line" d="M40 140 Q100 60 160 140" />
+        <circle class="shape-fill" cx="100" cy="60" r="6"/>
+      </svg>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Cerita Kami</span>
+      <h2 style="margin-top:20px;">Dibuat untuk <em>dipakai setiap hari</em>, dirancang untuk diingat selamanya.</h2>
+      <p>LUMÉN lahir dari koleksi Pinterest pribadi yang penuh inspirasi — sketsa, mood board, dan referensi yang akhirnya kami wujudkan menjadi perhiasan nyata.</p>
+      <p>Setiap desain melewati proses kurasi ketat: hanya bentuk yang timeless, material yang tahan lama, dan finishing yang nyaman dipakai sepanjang hari.</p>
+      <a href="about.html" class="btn" style="margin-top:8px;">Selengkapnya</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h3>Siap menambah kilau di koleksimu?</h3>
+        <a href="shop.html" class="btn filled">Mulai Belanja</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Bantuan</h4>
+        <a href="contact.html">Cara Pesan</a>
+        <a href="contact.html">Pengiriman</a>
+        <a href="contact.html">Retur &amp; Tukar</a>
+      </div>
+      <div class="footer-col">
+        <h4>Terhubung</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMÉN. All rights reserved.</span>
+      <span>Made with light, in Indonesia.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
